@@ -1,0 +1,25 @@
+name: Feature request
+description: Suggest a new native capability
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What can't you do today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: The tool/method you'd add (an EIP-1193 / JSON-RPC capability).
+    validations:
+      required: true
+  - type: input
+    id: standard
+    attributes:
+      label: Standard / interface
+      description: EIP/ERC number or JSON-RPC method name, if any
+    validations:
+      required: false

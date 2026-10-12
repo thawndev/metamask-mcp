@@ -1,0 +1,35 @@
+name: Bug report
+description: Something does not work as documented
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please do **not** include private keys, mnemonics or other secrets.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Output of `metamask-mcp --version` or the npm version
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: The tool call, the expected result, and the actual result (paste the structured error)
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      description: Node version, OS, chain / RPC (e.g. local Ganache chain 1337)
+    validations:
+      required: false
