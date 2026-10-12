@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -uo pipefail
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; cd "$DIR/../.."
+if ! curl -s -o /dev/null -X POST http://127.0.0.1:8545 -H 'content-type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"eth_chainId","params":[]}'; then echo "SKIP chain not running"; exit 0; fi
+out="$(MM_ALLOW_LOCAL_RPC=1 node scripts/native-api.mjs 2>&1)"; echo "$out"
+grep -q 'PASS all' <<<"$out" && echo "PASS native EIP-1193 surface complete" || { echo FAIL; exit 1; }
