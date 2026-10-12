@@ -1,0 +1,75 @@
+{
+  "name": "@thawndev/metamask-mcp",
+  "version": "0.1.0",
+  "description": "An Ethereum wallet MCP server: 48 tools over EIP-1193 / JSON-RPC with an in-process signer. Unofficial.",
+  "type": "module",
+  "bin": {
+    "metamask-mcp": "dist/cli.js"
+  },
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "CHANGELOG.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thawndev/metamask-mcp.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "setup": "node dist/cli.js setup",
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "dev": "node scripts/dev.mjs",
+    "start": "node dist/cli.js serve",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "test": "vitest run",
+    "e2e": "node scripts/local-e2e.mjs",
+    "doctor": "node dist/cli.js doctor",
+    "verify": "bash scripts/verify-all.sh",
+    "bench": "node scripts/bench-all.mjs && node scripts/bench-provider.mjs",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "viem": "^2.21.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "@types/node": "^22.10.0",
+    "eslint": "^9.16.0",
+    "prettier": "^3.4.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.18.0",
+    "vitest": "^2.1.0"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ethereum",
+    "evm",
+    "wallet",
+    "web3",
+    "viem",
+    "eip-1193",
+    "eip-712",
+    "ens",
+    "erc20"
+  ],
+  "bugs": {
+    "url": "https://github.com/thawndev/metamask-mcp/issues"
+  },
+  "homepage": "https://github.com/thawndev/metamask-mcp#readme",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

@@ -1,0 +1,27 @@
+# Agent / maintainer files — kept on disk, never part of the public repo
+.agents/
+AGENTS.md
+DIRECTIVES.md
+.local-custom-skills/
+
+# Secrets and local config
+.env
+.env.*
+*.env
+!.env.example
+
+# Node / build
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# OS / editor
+.DS_Store
+*.log
+
+# Agent/tooling artifacts
+.claude/
+skills-lock.json
+pnpm-workspace.yaml
